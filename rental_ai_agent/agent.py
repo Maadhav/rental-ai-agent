@@ -10,7 +10,7 @@ from google.adk.agents.callback_context import CallbackContext
 from google.adk.models.llm_request import LlmRequest
 from google.adk.models.llm_response import LlmResponse
 from typing import Optional, Dict, List, Any
-from mock_db import MockDatabase
+from rental_ai_agent.mock_db.database import MockDatabase
 
 # Initialize the mock database
 db = MockDatabase(in_memory=True)
@@ -636,6 +636,8 @@ Maintain a natural, helpful tone throughout the conversation.
     tools=[query_apartments, get_apartment_details, get_amenities_info, manage_user, 
            schedule_property_tour, get_virtual_tour, get_property_policies],
 )
+
+root_agent = rental_agent
 
 session_service = InMemorySessionService()
 
